@@ -1,0 +1,17 @@
+#include "header.h"
+
+int main() {
+    Asociatie asociatie;
+
+    citeste_asociatie(&asociatie, "apicultori.dat");
+    afiseaza_asociatie(&asociatie);
+
+    unsigned int recolta;
+    printf("Introduceti numarul recoltei pentru care doriti sa determinati apicultorul cu cea mai mare cantitate de miere: ");
+    scanf("%u", &recolta);
+    determina_apicultor_max_productie(&asociatie, recolta);
+
+    elibereaza_memorie(&asociatie);
+
+    return 0;
+}

@@ -1,0 +1,20 @@
+#ifndef HEADER_H
+#define HEADER_H
+
+typedef struct {
+    unsigned int numar_recolte;
+    unsigned int numar_stupi;
+    float** productie_miere;
+} Apicultor;
+
+typedef struct {
+    unsigned int numar_apicultori;
+    Apicultor* apicultori;
+} Asociatie;
+
+void citeste_asociatie(Asociatie* asociatie, const char* fisier_intrare);
+void afiseaza_asociatie(const Asociatie* asociatie);
+void determina_apicultor_max_productie(const Asociatie* asociatie, unsigned int recolta);
+void elibereaza_memorie(Asociatie* asociatie);
+
+#endif
